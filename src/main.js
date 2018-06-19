@@ -28,21 +28,17 @@ class App extends React.Component {
     // SG: Make a reset value
     // SG: Care about the polarity
     this.state = {
-      counter: 0,
+      text: '',
     };
   }
 
-
   handleUp(e) {
-    this.updateState(this.state.counter + 1);
+    this.updateState(this.state.text);
   }
 
 
-  updateState(counter) {
-    let polarity = null;
-    if (counter > 0) { polarity = 'positive'; }
-    if (counter < 0) { polarity = 'negative'; }
-    this.setState({ counter, polarity });
+  updateState(text) {
+    this.setState({ text });
   }
 
   render() {
@@ -51,7 +47,7 @@ class App extends React.Component {
 
         <Header />
         <div id="counterWrapper">
-          <div id="cow" className={this.state.polarity}>{this.state.counter}</div>
+          <div id="cow" className={this.state}></div>
           <a href="#" onClick={this.handleUp} id="up">Click Me</a>
         </div>
       </div>

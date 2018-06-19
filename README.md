@@ -1,30 +1,16 @@
-![cf](http://i.imgur.com/7v5ASc8.png) 26: Cowsay
-===
+## Lab26 - Front End Tooling and React
 
-## Submission Instructions
-  * Follow the instructions in the "Lab Instructions" documentation in the reference folder of the class repository
-  
-## Learning Objectives  
-* Students will be able to configure webpack to compile JS and SASS into a bundle
-* Students will be able to configure babel to transpile JSX and ES6 to ES5 javascript
-* Students will be able to create and render react components to the DOM
-* Students will be able to add event listeners to react components 
-* Students will be able to update react component state
+## Requirements
+* Integrate cowsay and faker into a react app.  Include the following items:
+ * A heading with the title "Generate Cowsay Lorem"
+ * A button displaying "click me"
+  * On click, the button should generate new content on the app state using cowsay and faker
 
-#### Feature Tasks  
-Create the following component
 
-###### App
-* Should contain the entire application's view and state
-* Should have a property on the state called content 
-* Should create a view with the following display
-  * A heading with the title "Generate Cowsay Lorem"
-  * A Button that displays "click me"
-    * `onClick` the button should generate new content on the app state using cowsay and faker
-  * A pre tag that displays the App state (content)
+## Instillation Instructions
+1) Clone the repo
+2) Enter npm i into terminal to install the dependencies
+3) Enter npm run watch into the terminal and a new window should appear in the browser in localhost 8080
+4) Click the 'click me' button to change the cow sayings
 
-#### Stretch Goal 
-* add a select menu that enables you to change the type of cowfile currently being used
-
-#### Documentation  
-Write a description of the project in your README.md
+## Credits
