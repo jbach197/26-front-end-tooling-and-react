@@ -1,0 +1,54 @@
+@mixin circle($size) {
+  border-radius: 50%;
+  height: $size;
+  line-height: $size;
+  padding: $size;
+  text-align: center;
+  width: $size;
+}
+
+body {
+  background: #f5f5f5;
+  color: #800000;
+  font-size: 16px;
+}
+
+#counterWrapper {
+
+  align-items: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+
+  #counter {
+
+    @include circle(2em);
+    background: #eee;
+    border: 4px double #ccc;
+    font-size: 1.5em;
+    font-weight: 900;
+    order: 2;
+
+    &.positive {
+      color: blue;
+    }
+
+    &.negative {
+      color: red;
+    }
+
+  }
+
+  #up {
+    @include circle(1.5em);
+    border: 3px solid #672D64;
+    color: #000;
+    display: block;
+    text-decoration: none;
+    order: 2;
+    &:hover {
+      background: #672D64;
+      color: #fff;
+    }
+  }
+}
