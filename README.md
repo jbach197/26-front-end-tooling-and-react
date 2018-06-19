@@ -1,4 +1,7 @@
 ## Lab26 - Front End Tooling and React
+* Link to master: https://github.com/jbach197/26-front-end-tooling-and-react
+* Link to pull request: https://github.com/jbach197/26-front-end-tooling-and-react/pull/1
+* Link to Travis:
 
 ## Requirements
 * Integrate cowsay and faker into a react app.  Include the following items:
