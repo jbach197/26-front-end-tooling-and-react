@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDom from 'react-dom';
-import Cowsay from 'cowsay';
-import Faker from 'faker';
+import {say} from 'cowsay';
+import faker from 'faker';
 
 import './style/app.scss';
 
@@ -22,35 +22,39 @@ class App extends React.Component {
   constructor(props) {
     super(props);
 
-    this.handleUp = this.handleUp.bind(this);
-    this.updateState = this.updateState.bind(this);
-
-    // SG: Make a reset value
-    // SG: Care about the polarity
     this.state = {
-      text: '',
+      content:  say({ text: "Hello" })
     };
+
+    this.handleClick = this.handleClick.bind(this);
+    this.updateState = this.updateState.bind(this);
   }
 
-  handleUp(e) {
-    this.updateState(this.state.text);
+  handleClick() {
+    this.setState({
+      content: say({text: faker.lorem.sentence()}),
+    })
+    
+    let content = say({text: faker.lorem.sentence()});
+    this.updateState(content);
   }
 
-
-  updateState(text) {
-    this.setState({ text });
+  updateState(content) {
+   this.setState({content});
   }
 
+ 
   render() {
     return (
       <div>
-
-        <Header />
-        <div id="counterWrapper">
-          <div id="cow" className={this.state}></div>
-          <a href="#" onClick={this.handleUp} id="up">Click Me</a>
+        <React.Fragment>
+          <Header />
+          <div id="cow">
+          <button onClick={this.handleClick}>Click Me </button>
+          </div>
+          <pre>{this.state.content}</pre>
+          </React.Fragment>
         </div>
-      </div>
     );
   }
 
